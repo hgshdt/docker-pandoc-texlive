@@ -1,11 +1,11 @@
-# docker_pandoc_texlive
+# docker-pandoc-texlive
 
 ## Usage
 
 ### Build
 
 ```
-$ docker build -t hgshdt/pandoc_texlive .
+$ docker build -t hgshdt/pandoc-texlive .
 ```
 
 ### Run 
@@ -13,7 +13,7 @@ $ docker build -t hgshdt/pandoc_texlive .
 #### Example: Convert Markdown to PDF
 
 ```
-$ docker run -it --rm -v `pwd`/<Markdown Directory>:/workspace -v `pwd`/templates:/root/.pandoc/templates hgshdt/pandoc_texlive pandoc 01.md 02.md -f markdown -o output.pdf -V documentclass=ltjarticle -V classoption=a4paper -V geometry:margin=20mm -V CJKmainfont=IPAexGothic -V mainfont=IPAexGothic -V sansfont=IPAexGothic --pdf-engine=lualatex --template eisvogel.tex --listings --number-sections --toc --toc-depth=2
+$ docker run -it --rm -v `pwd`/<Markdown Directory>:/workspace -v `pwd`/templates:/root/.pandoc/templates hgshdt/pandoc-texlive pandoc 01.md 02.md -f markdown -o output.pdf -V documentclass=ltjarticle -V classoption=a4paper -V geometry:margin=20mm -V CJKmainfont=IPAexGothic -V mainfont=IPAexGothic -V sansfont=IPAexGothic --pdf-engine=lualatex --template eisvogel.tex --listings --number-sections --toc --toc-depth=2
 ```
 
 ## Others
