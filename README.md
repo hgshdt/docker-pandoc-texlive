@@ -13,7 +13,7 @@ $ docker build -t hgshdt/pandoc-texlive .
 #### Example: Convert Markdown to PDF
 
 ```
-$ docker run -it --rm -v `pwd`/<Markdown Directory>:/workspace -v `pwd`/templates:/root/.pandoc/templates hgshdt/pandoc-texlive pandoc 01.md 02.md -f markdown -o output.pdf -V documentclass=ltjarticle -V classoption=a4paper -V geometry:margin=20mm -V CJKmainfont=IPAexGothic -V mainfont=IPAexGothic -V sansfont=IPAexGothic --pdf-engine=lualatex --template eisvogel.tex --listings --number-sections --toc --toc-depth=2
+$ docker run -it --rm -v `pwd`:/workspace hgshdt/pandoc-texlive pandoc 01.md 02.md -f markdown -o output.pdf -V documentclass=ltjarticle -V classoption=a4paper -V geometry:margin=20mm -V CJKmainfont=IPAexGothic -V mainfont=IPAexGothic -V sansfont=IPAexGothic --pdf-engine=lualatex --template eisvogel.tex --listings --number-sections --toc --toc-depth=2 --filter plantuml.py
 ```
 
 ## Others
@@ -47,3 +47,14 @@ titlepage-text-color: "000000"
 titlepage-color: "efefef"
 toc-own-page: "true"
 ...
+```
+
+### Exmple: PlantUML
+
+```plantuml
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+```
