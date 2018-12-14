@@ -42,10 +42,10 @@ $endif$
 title: TITLE
 subtitle: SUBTITLE
 date: "yyyy/mm/dd"
-titlepage: "true"
+titlepage: false
 titlepage-text-color: "000000"
 titlepage-color: "efefef"
-toc-own-page: "true"
+toc-own-page: false
 ...
 ```
 
