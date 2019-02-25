@@ -1,0 +1,3 @@
+[submodule "pandoc-latex-template"]
+	path = pandoc-latex-template
+	url = git@github.com:hgshdt/pandoc-latex-template.git
