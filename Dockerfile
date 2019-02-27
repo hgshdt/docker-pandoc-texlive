@@ -1,8 +1,5 @@
 FROM ubuntu:18.04
 
-ENV http_proxy ${HTTP_PROXY}
-ENV https_proxy ${HTTPS_PROXY}
-
 RUN apt-get update -qq \
     && apt-get upgrade -qq \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y texlive-latex-recommended \

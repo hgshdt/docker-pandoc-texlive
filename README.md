@@ -20,23 +20,6 @@ $ docker run -it --rm -v `pwd`:/workspace hgshdt/pandoc-texlive pandoc 01.md 02.
 
 ## Others
 
-### Use Template 
-
-Use pandoc-latex-template(Eisvogel).
-Change `secnumdepth` from 3 to 5.
-
-```
-%
-% TOC depth and 
-% section numbering depth
-%
-\setcounter{tocdepth}{3}
-$if(numbersections)$
-%\setcounter{secnumdepth}{3}
-\setcounter{secnumdepth}{5}
-$endif$
-```
-
 ### Example: Title YAML
 
 ```
