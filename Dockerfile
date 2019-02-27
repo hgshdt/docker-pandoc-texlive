@@ -1,5 +1,8 @@
 FROM ubuntu:18.04
 
+ENV http_proxy ${HTTP_PROXY}
+ENV https_proxy ${HTTPS_PROXY}
+
 RUN apt-get update -qq \
     && apt-get upgrade -qq \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y texlive-latex-recommended \
@@ -15,7 +18,7 @@ RUN pip3 install pandocfilters
 COPY pandoc-latex-template/eisvogel.tex /root/.pandoc/templates/
 COPY plantuml/plantuml.py /usr/local/bin/
 
-ARG PLANTUML_VER="1.2019.1"
+ARG PLANTUML_VER="1.2018.13"
 RUN curl -sSL http://sourceforge.net/projects/plantuml/files/plantuml.${PLANTUML_VER}.jar/download > /usr/local/bin/plantuml.jar \
     && chmod +x /usr/local/bin/plantuml.py
 
