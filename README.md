@@ -1,5 +1,7 @@
 # docker-pandoc-texlive
 
+[![](https://images.microbadger.com/badges/image/hideto1976/docker-pandoc-texlive.svg)](https://microbadger.com/images/hideto1976/docker-pandoc-texlive "Get your own image badge on microbadger.com")
+
 ## Usage
 
 ### Build
