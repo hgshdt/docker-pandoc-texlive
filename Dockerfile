@@ -18,7 +18,7 @@ RUN pip3 install pandocfilters
 COPY pandoc-latex-template/eisvogel.tex /root/.pandoc/templates/
 COPY plantuml/plantuml.py /usr/local/bin/
 
-ARG PLANTUML_VER="1.2018.13"
+ARG PLANTUML_VER="1.2019.1"
 RUN curl -sSL http://sourceforge.net/projects/plantuml/files/plantuml.${PLANTUML_VER}.jar/download > /usr/local/bin/plantuml.jar \
     && chmod +x /usr/local/bin/plantuml.py
 
