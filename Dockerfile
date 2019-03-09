@@ -4,7 +4,7 @@ RUN apt-get update -qq \
     && apt-get upgrade -qq \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y texlive-latex-recommended \
         texlive-lang-cjk texlive-lang-japanese texlive-fonts-extra texlive-luatex texlive-xetex \
-        wget curl default-jre python3-dev python3-pip graphviz locales librsvg2-bin \\
+        wget curl default-jre python3-dev python3-pip graphviz locales librsvg2-bin \
     && apt-get clean
 
 RUN echo "ja_JP.UTF-8 UTF-8" >> /etc/locale.gen && locale-gen
