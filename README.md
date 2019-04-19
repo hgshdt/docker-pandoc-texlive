@@ -43,22 +43,3 @@ Bob --> Alice: Authentication Response
 Alice -> Bob: Another authentication Request
 Alice <-- Bob: another authentication Response
 ```
-
-### pandoc-latex-template update
-
-```
-$ cd pandoc-latex-template
-$ git fetch upstream
-$ git merge upstream/master
-$ git push
-$ cd ../docker-pandoc-texlive
-$ git submodule foreach git pull origin master
-$ git diff
-```
-
-### create submodule
-
-```
-$ cd docker-pandoc-texlive
-$ git submodule add git@github.com:hgshdt/pandoc-latex-template.git pandoc-latex-template
-```
