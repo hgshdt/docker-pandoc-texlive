@@ -6,16 +6,18 @@
 
 ### Build
 
-```
-$ docker build -t hgshdt/pandoc-texlive .
-```
+`$ docker build -t hgshdt/docker-pandoc-texlive .`
 
 ### Run 
 
 #### Example: Convert Markdown to PDF
 
 ```
-$ docker run -it --rm -v `pwd`:/workspace hgshdt/pandoc-texlive pandoc 01.md 02.md -f markdown -o output.pdf -V documentclass=ltjarticle -V classoption=a4paper -V geometry:margin=20mm -V CJKmainfont=IPAexGothic -V mainfont=IPAexGothic -V sansfont=IPAexGothic --pdf-engine=lualatex --template eisvogel.tex --listings --number-sections --toc --toc-depth=2 --filter plantuml.py
+$ docker run -it --rm -v `pwd`:/workspace hgshdt/docker-pandoc-texlive pandoc 01.md 02.md -f markdown -o output.pdf -V documentclass=ltjarticle -V classoption=a4paper -V geometry:margin=20mm -V CJKmainfont=IPAexGothic -V mainfont=IPAexGothic -V sansfont=IPAexGothic --pdf-engine=lualatex --template eisvogel.tex --listings --number-sections --toc --toc-depth=2 --filter plantuml.py
+```
+
+```
+$ docker run -it --rm -v `pwd`:/workspace hgshdt/docker-pandoc-texlive pandoc README.md -f markdown -o output.pdf -V documentclass=ltjarticle -V classoption=a4paper -V geometry:margin=20mm -V CJKmainfont='Noto Sans CJK JP Regular' -V mainfont='Noto Sans CJK JP Regular' -V sansfont='Noto Sans CJK JP Regular' -V monofont='Noto Sans Mono CJK JP Regular' --pdf-engine=lualatex --template eisvogel.tex --listings --number-sections --toc --toc-depth=2 --filter plantuml.py
 ```
 
 ## Others

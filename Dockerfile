@@ -4,7 +4,7 @@ RUN apt-get update -qq \
     && apt-get upgrade -qq \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y texlive-latex-recommended \
         texlive-lang-cjk texlive-lang-japanese texlive-fonts-extra texlive-luatex texlive-xetex \
-        wget curl default-jre python3-dev python3-pip graphviz locales librsvg2-bin unzip \
+        wget curl default-jre python3-dev python3-pip graphviz locales librsvg2-bin unzip fonts-noto-cjk \
     && apt-get clean
 
 RUN echo "ja_JP.UTF-8 UTF-8" >> /etc/locale.gen && locale-gen
@@ -23,7 +23,7 @@ RUN mkdir -p /root/.pandoc/templates \
 
 COPY plantuml/plantuml.py /usr/local/bin/
 
-ARG PLANTUML_VER="1.2019.4"
+ARG PLANTUML_VER="1.2019.5"
 RUN curl -sSL http://sourceforge.net/projects/plantuml/files/plantuml.${PLANTUML_VER}.jar/download > /usr/local/bin/plantuml.jar \
     && chmod +x /usr/local/bin/plantuml.py
 
