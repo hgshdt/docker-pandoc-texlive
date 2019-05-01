@@ -7,6 +7,13 @@ RUN apt-get update -qq \
         wget curl default-jre python3-dev python3-pip graphviz locales librsvg2-bin unzip fonts-noto-cjk \
     && apt-get clean
 
+RUN wget -q https://github.com/googlefonts/spacemono/archive/f5ebc1e1c0.zip -O spacemono.zip \
+    && unzip spacemono.zip \
+    && rm spacemono.zip \
+    && mkdir -p /root/.fonts/ \
+    && cp spacemono-f5ebc1e1c0/fonts/SpaceMono-Regular.ttf /root/.fonts/ \
+    && fc-cache -fv
+
 RUN echo "ja_JP.UTF-8 UTF-8" >> /etc/locale.gen && locale-gen
 ENV LANG=ja_JP.UTF-8
 

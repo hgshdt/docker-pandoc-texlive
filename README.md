@@ -17,7 +17,7 @@ $ docker run -it --rm -v `pwd`:/workspace hgshdt/docker-pandoc-texlive pandoc 01
 ```
 
 ```
-$ docker run -it --rm -v `pwd`:/workspace hgshdt/docker-pandoc-texlive pandoc README.md -f markdown -o output.pdf -V documentclass=ltjarticle -V classoption=a4paper -V geometry:margin=20mm -V CJKmainfont='Noto Sans CJK JP Regular' -V mainfont='Noto Sans CJK JP Regular' -V sansfont='Noto Sans CJK JP Regular' -V monofont='Noto Sans Mono CJK JP Regular' --pdf-engine=lualatex --template eisvogel.tex --listings --number-sections --toc --toc-depth=2 --filter plantuml.py
+$ docker run -it --rm -v `pwd`:/workspace hgshdt/docker-pandoc-texlive pandoc README.md -f markdown -o output.pdf -V documentclass=ltjarticle -V classoption=a4paper -V geometry:margin=20mm -V CJKmainfont='Noto Sans CJK JP Regular' -V mainfont='Noto Sans CJK JP Regular' -V sansfont='Noto Sans CJK JP Regular' -V monofont='Space Mono' --pdf-engine=lualatex --template eisvogel.tex --listings --number-sections --toc --toc-depth=2 --filter plantuml.py
 ```
 
 ## Others
