@@ -31,7 +31,7 @@ RUN wget --no-check-certificate https://github.com/jgm/pandoc/releases/download/
 RUN dpkg -i pandoc-${PANDOC_VER}-1-amd64.deb
 RUN pip3 install pandocfilters
 
-ARG EISVOGEL_VER="1.2.3"
+ARG EISVOGEL_VER="1.2.4"
 RUN wget --no-check-certificate https://github.com/Wandmalfarbe/pandoc-latex-template/releases/download/v${EISVOGEL_VER}/Eisvogel-${EISVOGEL_VER}.zip -O ./Eisvogel-${EISVOGEL_VER}.zip
 RUN unzip Eisvogel-${EISVOGEL_VER}.zip
 RUN mkdir -p /root/.pandoc/templates \
@@ -39,7 +39,7 @@ RUN mkdir -p /root/.pandoc/templates \
 
 COPY plantuml/plantuml.py /usr/local/bin/
 
-ARG PLANTUML_VER="1.2019.6"
+ARG PLANTUML_VER="1.2019.8"
 RUN curl -sSL http://sourceforge.net/projects/plantuml/files/plantuml.${PLANTUML_VER}.jar/download > /usr/local/bin/plantuml.jar \
     && chmod +x /usr/local/bin/plantuml.py
 
