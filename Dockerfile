@@ -32,7 +32,7 @@ RUN mkdir -p /root/.pandoc/templates \
 
 COPY plantuml/plantuml.py /usr/local/bin/
 
-ARG PLANTUML_VER="1.2019.9"
+ARG PLANTUML_VER="1.2019.11"
 RUN curl -sSL http://sourceforge.net/projects/plantuml/files/plantuml.${PLANTUML_VER}.jar/download > /usr/local/bin/plantuml.jar \
     && chmod +x /usr/local/bin/plantuml.py
 
