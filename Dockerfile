@@ -24,7 +24,7 @@ RUN wget --no-check-certificate https://github.com/jgm/pandoc/releases/download/
 RUN dpkg -i pandoc-${PANDOC_VER}-1-amd64.deb
 RUN pip3 install pandocfilters
 
-ARG EISVOGEL_VER="1.2.4"
+ARG EISVOGEL_VER="1.3.0"
 RUN wget --no-check-certificate https://github.com/Wandmalfarbe/pandoc-latex-template/releases/download/v${EISVOGEL_VER}/Eisvogel-${EISVOGEL_VER}.zip -O ./Eisvogel-${EISVOGEL_VER}.zip
 RUN unzip Eisvogel-${EISVOGEL_VER}.zip
 RUN mkdir -p /root/.pandoc/templates \
