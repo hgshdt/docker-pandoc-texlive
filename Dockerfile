@@ -19,7 +19,7 @@ RUN fc-cache -fv
 RUN echo "ja_JP.UTF-8 UTF-8" >> /etc/locale.gen && locale-gen
 ENV LANG=ja_JP.UTF-8
 
-ARG PANDOC_VER="2.8.1"
+ARG PANDOC_VER="2.9"
 RUN wget --no-check-certificate https://github.com/jgm/pandoc/releases/download/${PANDOC_VER}/pandoc-${PANDOC_VER}-1-amd64.deb -O ./pandoc-${PANDOC_VER}-1-amd64.deb
 RUN dpkg -i pandoc-${PANDOC_VER}-1-amd64.deb
 RUN pip3 install pandocfilters
@@ -32,7 +32,7 @@ RUN mkdir -p /root/.pandoc/templates \
 
 COPY plantuml/plantuml.py /usr/local/bin/
 
-ARG PLANTUML_VER="1.2019.12"
+ARG PLANTUML_VER="1.2019.13"
 RUN curl -sSL http://sourceforge.net/projects/plantuml/files/plantuml.${PLANTUML_VER}.jar/download > /usr/local/bin/plantuml.jar \
     && chmod +x /usr/local/bin/plantuml.py
 
