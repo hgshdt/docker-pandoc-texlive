@@ -19,7 +19,7 @@ RUN fc-cache -fv
 RUN echo "ja_JP.UTF-8 UTF-8" >> /etc/locale.gen && locale-gen
 ENV LANG=ja_JP.UTF-8
 
-ARG PANDOC_VER="2.9"
+ARG PANDOC_VER="2.9.1"
 RUN wget --no-check-certificate https://github.com/jgm/pandoc/releases/download/${PANDOC_VER}/pandoc-${PANDOC_VER}-1-amd64.deb -O ./pandoc-${PANDOC_VER}-1-amd64.deb
 RUN dpkg -i pandoc-${PANDOC_VER}-1-amd64.deb
 RUN pip3 install pandocfilters
