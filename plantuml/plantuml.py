@@ -23,8 +23,8 @@ def plantuml(key, value, format, _):
             caption, typef, keyvals = get_caption(keyvals)
 
             filename = get_filename4code("plantuml", code)
-            # HTML5を追加
-            filetype = get_extension(format, "png", html5="svg", html="svg", latex="eps")
+            #filetype = get_extension(format, "png", html5="svg", html="svg", latex="eps")
+            filetype = get_extension(format, "png", html5="svg", html="svg", latex="png")
 
             src = filename + '.uml'
             dest = filename + '.' + filetype
