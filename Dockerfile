@@ -14,12 +14,12 @@ RUN fc-cache -fv
 RUN echo "ja_JP.UTF-8 UTF-8" >> /etc/locale.gen && locale-gen
 ENV LANG=ja_JP.UTF-8
 
-ARG PANDOC_VER="2.9.2.1"
+ARG PANDOC_VER="2.10.1"
 RUN wget --no-check-certificate https://github.com/jgm/pandoc/releases/download/${PANDOC_VER}/pandoc-${PANDOC_VER}-1-amd64.deb -O ./pandoc-${PANDOC_VER}-1-amd64.deb
 RUN dpkg -i pandoc-${PANDOC_VER}-1-amd64.deb
 RUN pip3 install pandocfilters
 
-ARG EISVOGEL_VER="1.4.0"
+ARG EISVOGEL_VER="1.5.0"
 RUN wget --no-check-certificate https://github.com/Wandmalfarbe/pandoc-latex-template/releases/download/v${EISVOGEL_VER}/Eisvogel-${EISVOGEL_VER}.zip -O ./Eisvogel-${EISVOGEL_VER}.zip
 RUN unzip Eisvogel-${EISVOGEL_VER}.zip
 RUN mkdir -p /root/.pandoc/templates \
@@ -27,7 +27,7 @@ RUN mkdir -p /root/.pandoc/templates \
 
 COPY plantuml/plantuml.py /usr/local/bin/
 
-ARG PLANTUML_VER="1.2020.11"
+ARG PLANTUML_VER="1.2020.16"
 RUN curl -sSL http://sourceforge.net/projects/plantuml/files/plantuml.${PLANTUML_VER}.jar/download > /usr/local/bin/plantuml.jar \
     && chmod +x /usr/local/bin/plantuml.py
 
